@@ -1,6 +1,25 @@
-/* eslint-disable react/jsx-no-target-blank */
 import axios from 'axios';
 
-// implementation
-export const RANDOM_GREETING = 'greeting/RANDOM_GREETING';
-export const baseurl = 'http://[::1]:3000/api/greetings';
+const RANDOM_GREETING = 'greeting/RANDOM_GREETING';
+const baseurl = 'http://127.0.0.1:3000/api/greetings';
+
+const initialState = [];
+
+export const randomGreeting = () => async (dispatch) => {
+  const response = await axios.get(baseurl);
+  dispatch({
+    type: RANDOM_GREETING,
+    payload: response.data,
+  });
+};
+
+// Reducer
+const greetingReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case RANDOM_GREETING:
+      return action.payload;
+    default:
+      return state;
+  }
+};
+export default greetingReducer;

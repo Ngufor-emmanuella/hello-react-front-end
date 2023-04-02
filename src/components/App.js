@@ -1,11 +1,11 @@
-// import Greetings from './Greetings';
+import Greetings from './Greetings';
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <Greetings />
-//     </div>
-//   );
-// }
+function App() {
+  return (
+    <div className="App">
+      <Greetings />
+    </div>
+  );
+}
 
-// export default App;
+export default App;
