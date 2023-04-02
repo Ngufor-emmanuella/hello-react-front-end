@@ -12,5 +12,3 @@ function App() {
 }
 
 export default App;
-
-{ /* http://[::1]:3000/api/greetings */ }
